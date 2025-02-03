@@ -1,0 +1,125 @@
+/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 使用 CSS Grid 布局整个容器 */
+.container {
+    display: grid;
+    /* 定义 3 行 2 列的网格布局：
+       第一行：任务说明区域（跨 2 列）
+       第二行：头部区域（跨 2 列）
+       第三行：问题列表在左侧，侧边栏在右侧 */
+    grid-template-areas:
+      "task-description task-description"
+      "header header"
+      "question-list sidebar";
+    grid-template-columns: 2fr 1fr; /* 左侧区域宽度为右侧的两倍 */
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 任务说明区域：放在第一行，跨两列 */
+.task-description {
+    grid-area: task-description;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 头部区域：放在第二行，跨两列 */
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ffd700;
+}
+
+/* Logo 样式 */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 用户信息样式 */
+.user-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.badge.gold {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* 问题列表区域：左侧 */
+.question-list {
+    grid-area: question-list;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 问题列表内部样式 */
+.question-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.question-list li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.question-list textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.question-list button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* 侧边栏（今日贡献榜）：右侧 */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    /* 如果内容较少，可让侧边栏高度自适应 */
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.sidebar ol {
+    padding-left: 20px;
+}
+
+.sidebar p {
+    font-size: 16px;
+    color: #555;
+}

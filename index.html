@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识星球 - 高额激励</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- 任务说明区域 -->
+    	<section class="task-description">
+        	<h1>欢迎来到知识星球！</h1>
+        	<p>亲爱的金牌用户，感谢您的贡献！请尽可能多地回答问题，每回答一个问题，您将获得5元奖励。</p>
+    	</section>
+
+         <!-- 头部区域 -->
+    	<header>
+        	<div class="logo">知识星球</div>
+        	<div class="user-info">
+            		<span class="badge gold">金牌用户 🥇</span>
+            		<span>粉丝：5,200</span>
+            		<span>已回答问题数量：300条</span>
+            		<span>奖励：<span id="reward">1,500</span>元</span>
+        	</div>
+    	</header>
+
+        <!-- 统一提交的表单 -->
+        <section class="question-list">
+            <h2>问题列表</h2>
+            <form action="/submit" method="POST">
+                <ul>
+                    <li>
+                        <span>1. 如何提高学习效率？</span>
+                        <textarea name="answer_1" placeholder="请输入您的回答..." rows="3"></textarea>
+                    </li>
+                    <li>
+                        <span>2. 推荐一款适合初学者的编程语言。</span>
+                        <textarea name="answer_2" placeholder="请输入您的回答..." rows="3"></textarea>
+                    </li>
+                    <li>
+                        <span>3. 如何在家中进行有效的健身训练？</span>
+                        <textarea name="answer_3" placeholder="请输入您的回答..." rows="3"></textarea>
+                    </li>
+                </ul>
+                <button type="submit">提交所有回答</button>
+            </form>
+        </section>
+
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <h3>今日贡献榜</h3>
+            <ol>
+                <li>用户A - 10条</li>
+                <li>用户B - 8条</li>
+                <li>用户C - 5条</li>
+            </ol>
+        </aside>
+    </div>
+</body>
+</html>
